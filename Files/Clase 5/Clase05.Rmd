@@ -1,0 +1,574 @@
+---
+title: "Principios de Microeconomía"
+subtitle: "Presupuesto, Utilidad y Elección"
+author: "Carlos Yanes Guerra"
+date: "Universidad del Norte </br> `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["middlebury", "middlebury-fonts"]
+    nature:
+      beforeInit: "https://www.jvcasillas.com/midd_xaringan/js/midd_xaringan.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: false
+---
+name: xaringan-title
+class: left, middle
+
+
+# Principios de Microeconomía
+<br>
+## Presupuesto, Utilidad y Elección
+<br>
+<br>
+<img src="images/lognig.png" width="280" />
+
+### Carlos Yanes | Departamento de Economía | `r Sys.Date()`
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(broom, latex2exp, ggplot2, ggthemes, ggforce, viridis, dplyr, magrittr, knitr, parallel)
+
+library(tidyverse)
+library(babynames)
+library(fontawesome) # from github: https://github.com/rstudio/fontawesome
+library(DiagrammeR)
+library(hrbrthemes)
+library(econocharts)
+library(plotly)
+library(kableExtra)
+
+# Knitr options
+
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 7,
+  warning = F,
+  message = F
+)
+```
+
+---
+class: middle, inverse
+
+.left-column[
+
+# `r emo::ji("crossed_fingers")`
+
+]
+
+.right-column[
+# Preguntas de la clase anterior?
+]
+
+---
+class: title-slide-section-blue, middle
+
+--
+
+## Felicitaciones a
+
+--
+
+.pull-left[
+- .white[Natalia Peinado 🥇]
+- .white[Orlando Lora 🥇 1:46]
+- .white[Santiago Quintero 2:15]
+- .white[Nathalia Quintero 2:26]
+]
+
+]
+
+.pull-right[![](https://media.giphy.com/media/l4q8cJzGdR9J8w3hS/giphy.gif)]
+
+---
+# Sobre el uso de las matematicas
+
+--
+
+`r fa("angle-double-right", fill="blue")` **Considere la siguiente expresión**:
+
+--
+
+<font size="+5">$$2+2=4$$</font>
+
+--
+
+<span style="font-size:larger;">Cualquiera puede hacerlo...</span>
+
+--
+
+`r fa("angle-double-right", fill="blue")` **Ahora mire a continuación**:
+
+--
+
+<font size="+5">$$2+2=\sqrt{16}$$</font>
+
+--
+
+<span style="font-size:larger;"> No todos pueden hacerlo...</span>
+
+---
+# Sobre el uso de las matematicas
+
+--
+
+`r fa("angle-double-right", fill="blue")` **Nuevamente mire a continuación**:
+
+--
+
+<font size="+5">$$3!-\left[1+\sum \limits_{p=1}^{\infty}\frac{1}{2^{p}}\right]=\sqrt{16}$$</font>
+
+--
+
+<span style="font-size:larger;"> Ahora si que pocos podrán hacerlo...</span>
+
+---
+# Sobre el uso de las matematicas
+
+--
+
+### Entonces
+
+--
+
+`r fa("angellist")` Conociendo de lo anterior ya usted tiene varias formas de obtener una .black[respuesta].
+
+--
+
+`r fa("angellist")` Aquellos **profesionales** que tengan en su cabeza un montón de herramientas de solución... ganarán mas que la mediana salarial.
+
+--
+
+`r fa("angellist")` Hay otras variables (redes sociales) y características (habilidades)... pero con las que contamos propiamente son **suficientes**.
+
+---
+class: title-slide-section-grey, middle
+
+# Presupuesto
+
+<br>
+<img src="images/lognig.png" width="380" />
+
+---
+# Presupuesto
+
+--
+
+<midd-blockquote> La **restricción presupuestaria** es el conjunto de bienes y servicios que el consumidor puede permitirse, dado el precio de cada bien y de acuerdo a su ingreso disponible </midd-blockquote>
+
+--
+
+`r fa("tablet", fill="red")` Suponga lo siguiente:
+
+--
+
+El presupuesto para un bien x (alimentos) y un bien y (ropa) es:
+
+--
+
+$$I \geq P_xX+P_yY$$
+--
+
+Donde $P_x$ viene siendo el precio de los alimentos y $P_y$ el de la ropa, no olvide que el ingreso vendría a ser $I$.
+
+--
+
+El presupuesto supone que el total de su .black[ingreso] no puede ser menor a lo que usted consume.
+
+---
+# Presupuesto
+
+--
+
+`r fa("burn", fill="red")` El **Presupuesto** debe optimizarse de tal forma que si tuviera que el precio de los alimentos es de $ 40 y la ropa tiene un precio de 120 con un nivel de ingreso de 500, entonces usted debe tener presente:
+
+--
+
+$$40 X + 120 Y \leq 500$$
+
+--
+
+`r fa("arrow-circle-right", fill="red")` Usted debe conocer como es la *tasa de sustitución* de el frente a esos bienes.
+
+--
+
+### Recuerda lo que hicimos la clase pasada?
+
+--
+
+`r fa("arrow-circle-right", fill="red")` Pues asuma que un consumidor tiene una *función* de utilidad de bienes sustitutos de tal forma que:
+
+--
+
+$$F(X,Y)=XY$$
+--
+
+`r fa("arrow-circle-right", fill="red")` sus derivadas parciales nos llevan a:
+
+--
+
+$$\triangle U / \triangle Y = X \quad \text{de forma similar con}\; X $$
+
+---
+# Presupuesto
+
+--
+
+`r fa("arrow-circle-right", fill="red")` Entonces tendremos una tasa de sustitución de la siguiente forma:
+
+$$\text{Tasa de sustitución}= \frac{Y}{X}$$
+
+--
+
+_Lo que significa es que debemos renunciar a una unidad del bien de Y para obtener una de X_.
+
+--
+
+Reemplazamos $Y=X$ en el presupuesto anterior que teníamos como ejemplo y eso es:
+
+--
+
+$$40 X + 120 (\color{#FF0000}{X}) \leq 500$$
+
+--
+
+_No queda mas que despejar_
+
+--
+
+$$\begin{aligned}
+160X &= 500 \\
+ X &= \frac{500}{160}= 3.13
+\end{aligned}$$
+
+--
+
+El individuo solo podrá consumir 3.13 unidades del bien X y en *este caso* también debe consumir las mismas unidades para el bien Y, con el fin que le alcance los $500 de ingreso.
+
+---
+# Presupuesto
+
+--
+
+### Qué sucedería en caso tal el individuo no quisiera consumir nada del bien (Y)
+
+--
+
+$$\color{#FF0000}{40X} + 0 \leq 500$$
+
+--
+
+> En este caso, todo se gastará en (X) y podrá comprar hasta 12,5 unidades de alimentos.
+
+---
+# Presupuesto
+
+--
+
+.pull-left[- La pendiente de la recta de presupuesto se obtiene cuando se despeja (Y).
+
+$$P_y Y= I - P_x X$$
+$$Y=\frac{I}{P_y}- \frac{P_x}{P_y} X$$
+]
+
+.Pull-right[
+```{r tg1, echo=FALSE, out.width="50%"}
+knitr::include_graphics("images/g1.png")
+```
+]
+
+---
+# Presupuesto
+
+--
+
+.pull-left[- En algunos casos el Ingreso puede aumentar. Esto porque una persona hereda algo o tiene un nuevo trabajo mejor pago u ocurrió algo favorable
+
+$$I_1> I$$
+]
+
+.Pull-right[
+```{r tg2, echo=FALSE, out.width="50%"}
+knitr::include_graphics("images/g2.png")
+```
+]
+
+
+---
+# Presupuesto
+
+--
+
+.pull-left[- Cuando los precios varian, es decir $P_{x1} > P_x$, entonces la curva pivotea hacia adentro. Esto genera un alto componente de arreglo del presupuesto de compra del individuo.
+
+$$Y=\frac{I}{P_y}- \frac{\uparrow P_x}{P_y} X$$
+]
+
+.Pull-right[
+```{r tg3, echo=FALSE, out.width="50%"}
+knitr::include_graphics("images/g3.png")
+```
+]
+
+---
+class: title-slide-section-blue, middle
+
+# Ejemplos de esto
+
+<br>
+<img src="images/lognig.png" width="380" />
+
+---
+# Ejemplo 1
+
+--
+
+`r fa("check-square", fill="red")` En un .black[gimnasio], se dice: "Cuando dejo de ir a una hora de sauna, siempre lo sustituyo por cinco horas más de gimnasia". Si el gimnasio me cobra $100 por hora de gimnasia y 200 por hora de sauna, y me ofrecen la posibilidad de comprar un _bono de sauna_ que da derecho a 20 horas pagando 
+$3000. Yo, que gasto en ambas actividades 14000 al mes, para maximizar mi utilidad, que debería hacer?
+
+--
+
+#### Respuesta:
+
+--
+
+- La tasa de sustitución en este caso es de -5 (una constante) ya que tenemos un ejemplo de bienes sustitutos perfectos.
+
+--
+
+- Esto nos conduce a mirar solo el tipo del precio por cada bien que se ofrece en el **mercado** y que para este caso solo demandaria _gimnasio_ ya que es mas económico que el sauna.
+
+--
+
+- Planteamos sin embargo la función de _restricción de presupuesto_.
+
+--
+
+$$14000= 100G+200S $$
+---
+# Ejemplo 1
+
+--
+
+- Reemplazo entonces en mi restricción y puedo tener:
+
+--
+
+$$\begin{aligned}
+  14000 &=\$100 (0)+\$200 (Y)\\
+  14000 &=\$200 (Y)\\
+  Sauna(Y)&= 70\: horas
+  \end{aligned}$$
+  
+--
+
+- Eso es lo que regularmente se gastaría si solo se gasta su presupuesto en horas de Sauna. Miremos que con .Black[Bono] son 20 horas que recibe a tan solo $3000.
+
+--
+
+_La restricción queda:_
+
+$$\begin{aligned}
+  11000 &=\$100 (0)+\$200 (Y)\\
+  11000 &=\$200 (Y)\\
+  Sauna(Y)&= 55\: horas
+  \end{aligned}$$
+
+--
+
+> De antesala ya tiene 20 horas mas 55 da un total de 75 horas si solo fuera al sauna, por ende es eficiente comprar el bono.
+
+---
+# Ejemplo 2
+
+--
+
+Suponga que dispone de un **ingreso** al mes de $1.789.200 para adquirir almuerzos -estos pueden tener los bienes que quiera como por ejemplo: carne, arroz, ensalada y gaseosa- y adquirir material de papelería. Los almuerzos tienen un costo de 15.000 y la papelería de 68.500.
+
+--
+
+`r fa("chess-knight", fill="red")` ¿Cuál es la restricción de .black[presupuesto] que tiene esta persona? _escriba la ecuación correspondiente_.
+
+--
+
+`r fa("chess-knight", fill="red")` Si se gasta toda la plata en almuerzos, ¿cuantos almuerzos puede adquirir?
+
+--
+
+`r fa("chess-knight", fill="red")` Si ahora se lo gastará todo en papelería, ¿cuantas unidades de papelería puede comprar?
+
+--
+
+`r fa("chess-knight", fill="red")` Suponga ahora que la universidad ha subido el precio de los almuerzos en un .black[6%]. ¿Cual es la nueva restricción que tiene el individuo?.
+
+---
+# Ejemplo 2
+
+--
+
+#### Respuestas
+
+--
+
+1. La restricción es:
+$$\$1789200=\$15000(X)+\$68500(Y)$$
+
+--
+
+2. Si todo se va en .black[almuerzos]:
+
+$$\begin{aligned}
+  \$1789200=&\$15000(X)+\$68500(0)\\
+  \frac{1789200}{15000}=&X\\
+  X=&  119.3
+  \end{aligned}$$
+  
+---
+# Ejemplo 2
+
+--
+
+#### Respuestas
+
+--
+
+3. Si todo se va en <span style="color:red">papelería</span> :
+$$\begin{aligned}
+  \$1789200=&\$15000(0)+\$68500(Y)\\
+  \frac{1789200}{68500}=&Y\\
+  Y=&  26.12
+  \end{aligned}$$
+  
+--
+
+4. La **nueva restricción** con el 6%:
+
+$$\$1789200=\color{#FF0000}{\$15900}(X)+\$68500(Y)$$
+
+---
+class: inverse, middle
+
+# Qué pasaría si conozco la forma o función de utilidad y quiero optimizar el consumo de almuerzos y de papelería.
+
+---
+# Ejemplo 2
+
+--
+
+`r fa("caret-square-right")` Debe conocer la forma de la función de utilidad de ambos bienes.
+
+--
+
+$$U(X,Y)= XY$$
+
+--
+
+Hallar la utilidad marginal -se hace con derivadas-
+
+--
+
+$$\begin{aligned}
+  \frac{\partial U}{\partial X}=& Y\\
+  \frac{\partial U}{\partial Y}=& X
+    \end{aligned}$$
+    
+    
+--
+
+    
+- Condición de tangencia:
+
+
+--
+
+$$\frac{Umg_{x}}{Umg_{y}}=\frac{Y}{X}=\frac{P_{x}}{P_{y}}$$
+---
+# Ejemplo 2
+
+--
+
+- Lo primero es, despejar uno de los bienes:
+
+--
+
+$$Y=\frac{P_{x}X}{P_{y}}$$
+
+- Reemplazar en la restricción:
+
+--
+
+$$\begin{aligned}
+  \$1789200=&\$15000(X)+\$68500(Y)\\
+  \$1789200=&\$15000(X)+\$68500(P_{x}X/P_{y})\\
+  \$1789200=&\$15000(X)+\frac{\$68500(\$15000X)}{\$68500}\\
+  \$1789200=&\$30000(X)\\
+  \frac{1789200}{30000}=& 59.64 \; \text{Unidades}
+  \end{aligned}$$
+
+---
+# Ejemplo 2
+
+--
+
+- Teniendo X óptimo se reemplaza en Y
+
+--
+
+$$Y=\frac{P_{x}X}{P_{y}}$$
+
+--
+
+-  Tenemos
+
+--
+
+$$Y=\frac{15000(59.64)}{68500}= 13.06\; \text{Unidades}$$
+
+--
+
+
+- Mire que se satisface la restricción:
+
+
+--
+
+$$\$1789200\approx \$15000\times 59.64 + \$68500\times 13.06$$
+
+--
+
+- Redondeando a enteros se gasta menos ($1'775.500) y optimiza en con .black[59] almuerzos y .black[13] de papelería. 
+
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://media.giphy.com/media/fUYqfB7TktvI8uhGI9/giphy.gif)
+background-size: cover
+
+---
+class: title-slide-section-grey
+# Bibliografía
+
+`r fa('book')` Acemoglu, D., Laibson, D., & List, J. (2021). *Economics*, eBook. Pearson Higher Ed.
+
+`r fa('book')` Krugman, P., & Wells, R. (2014). *Microeconomics (for AP)*. New York: Worth Publishers.
+
+`r fa('book')` Muñoz-Garcia, F. (2017). *Advanced microeconomic theory: an intuitive approach with examples*. MIT Press.
+
+
+---
+class: title-slide-final, middle
+
+# Gracias por su atención!
+
+## Alguna pregunta adicional?
+
+### Carlos Andres Yanes Guerra
+`r fa("envelope", fill="red")` cayanes@uninorte.edu.co
+`r fa("university", fill="blue")` Universidad del Norte
+

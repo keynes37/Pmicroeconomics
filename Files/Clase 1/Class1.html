@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Principios de Microeconomía</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Carlos Yanes Guerra" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/middlebury.css" rel="stylesheet" />
+    <link href="libs/remark-css/middlebury-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/plotly-binding/plotly.js"></script>
+    <script src="libs/typedarray/typedarray.min.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+    <link href="libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="libs/plotly-main/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+name: xaringan-title
+class: left, middle
+
+
+# Principios de Microeconomía
+&lt;br&gt;
+## Introducción: Presentación General
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src="images/lognig.png" width="280" /&gt;
+
+### Carlos Yanes | Departamento de Economía | 2023-07-24
+
+
+
+
+---
+class: right, middle
+&lt;img class="circle" src="https://avatars.githubusercontent.com/u/39503983?v=4" width="150px"/&gt;
+# Yo
+
+`Profesor&lt;-c('Carlos A. Yanes')` 
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M384 48c8.8 0 16 7.2 16 16V448c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H384zM96 0C60.7 0 32 28.7 32 64V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H96zM240 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128zm-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16H336c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80H208zM512 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V80zM496 192c-8.8 0-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm16 144c0-8.8-7.2-16-16-16s-16 7.2-16 16v64c0 8.8 7.2 16 16 16s16-7.2 16-16V336z"/></svg> [Carlos Andrés Yanes Guerra](https://www.linkedin.com/in/carlos-andres-yanes-guerra-0026bb31/?originalSubdomain=co)
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> [cayanes@uninorte.edu.co](mailto:cayanes@uninorte.edu.co)
+
+<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> [Github](https://github.com/keynes37)
+
+<svg aria-hidden="true" role="img" viewBox="0 0 488 512" style="height:1em;width:0.95em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg> [Google Scholar](https://scholar.google.com/citations?user=NlFSQDwAAAAJ&amp;hl=es)
+
+
+<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg> Profesor Asistente (Econometría, Microeconomía y algo de Ciencia de Datos) en el Departamento de Economía **Bloque D**.
+
+---
+# Lo importante de la sesión:
+
+&lt;span style="color:blue"&gt; **Aprender, preguntar y seguir aprendiendo** &lt;/span&gt;
+
+Siempre tengan en cuenta:
+
+- Respeto hacia los demás y a sus opiniones 
+- Asistir a todas las sesiones de la clase
+- Conocer el [Syllabus](https://uninorte.edu.co/) de la asignatura en **Brightspace**
+- Tener presente los recursos de la biblioteca [Karl Parrish](https://www.uninorte.edu.co/web/biblioteca/)
+
+---
+---
+class: title-slide-section-blue
+# En cuanto a las notas:
+
+
+&lt;table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Items &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Condicion &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Porcentaje &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;border-right:1px solid;"&gt; Parcial 1 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 30em; background-color: yellow !important;"&gt; Hasta la semana 5 (21 de Agosto) &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;border-left:1px solid;"&gt; 25% &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;border-right:1px solid;"&gt; Parcial 2 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 30em; background-color: yellow !important;"&gt; Hasta la semana 9 (18 de Septiembre) &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;border-left:1px solid;"&gt; 25% &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;border-right:1px solid;"&gt; Talleres (Trabajos) y Quizes &lt;/td&gt;
+   &lt;td style="text-align:left;width: 30em; background-color: yellow !important;"&gt; A lo largo de todo el semestre &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;border-left:1px solid;"&gt; 20% &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;border-right:1px solid;"&gt; Examen Final &lt;/td&gt;
+   &lt;td style="text-align:left;width: 30em; background-color: yellow !important;"&gt; Fecha prevista por registro academico &lt;/td&gt;
+   &lt;td style="text-align:left;color: white !important;border-left:1px solid;"&gt; 30% &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+- .lightgrey[De acuerdo al buen .white[*rendimiento académico*] de los estudiantes del curso, pueden darse *incentivos* a mejoras de notas. Como por ejemplo: .white[BONOS] que son totalmente individuales].
+
+--
+
+### Advertencias legales:
+
+--
+
+- .RUred[Artículo 70:] .lightgrey[Cuando el estudiante .RUred[falta el 25% de las clases], .white[no] tiene derecho a presentar el examen final y su nota será de 0.0 (cero punto cero).]
+
+--
+
+- .RUred[Artículo 96:] .lightgrey[*Fraude* tendrá penalidad de nota de cero ya sea en Parcial, Evaluación Final, Taller, Quíz o actividad desarrollada en clases. La reincidencia será entendida como el desarrollo de un proceso disciplinario con los entes de la Universidad.]
+
+
+
+
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f6/Lol_question_mark.png)
+background-size: cover
+# ¿Cree usted que en Colombia las cosas estan mejorando o empeorando?
+
+
+
+---
+# Bueno ahora mire lo siguiente:
+
+--
+
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b7b0fb8f953c312aec1e" style="width:756px;height:504px;"></div>
+<script type="application/json" data-for="htmlwidget-b7b0fb8f953c312aec1e">{"x":{"visdat":{"175634a3877f2":["function () ","plotlyVisDat"]},"cur_data":"175634a3877f2","attrs":{"175634a3877f2":{"labels":{},"values":{},"textposition":"inside","textinfo":"label+percent","insidetextfont":{"color":"#FFFFFF"},"hoverinfo":"text","text":{},"marker":{"colors":["function (distinct = FALSE) ","{","    c <- .Call(C_colors)","    if (distinct) ","        c[!duplicated(t(col2rgb(c)))]","    else c","}"],"line":{"color":"#FFFFFF","width":1}},"showlegend":false,"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"¿Cree usted que en Colombia las cosas estan mejorando o empeorando?","xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"annotations":[{"x":1,"y":-0.1,"text":"Fuente: Invamer, dic 2022","showarrow":false,"xref":"paper","yref":"paper","xanchor":"right","yanchor":"auto","xshift":0,"yshift":0,"font":{"size":15,"color":"red"}},{"x":1,"y":-0.1,"text":"Fuente: Invamer, dic 2022","showarrow":false,"xref":"paper","yref":"paper","xanchor":"right","yanchor":"auto","xshift":0,"yshift":0,"font":{"size":15,"color":"red"}}],"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"labels":["Empeorando","Mejorando","Ns/Nr"],"values":[764,278,116],"textposition":["inside","inside","inside"],"textinfo":"label+percent","insidetextfont":{"color":"#FFFFFF"},"hoverinfo":["text","text","text"],"text":["N= 764  Personas","N= 278  Personas","N= 116  Personas"],"marker":{"color":"rgba(31,119,180,1)","colors":["structure(function (distinct = FALSE) ","{","    c <- .Call(C_colors)","    if (distinct) ","        c[!duplicated(t(col2rgb(c)))]","    else c","}, apiSrc = TRUE)"],"line":{"color":"#FFFFFF","width":1}},"showlegend":false,"type":"pie","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+---
+# Bueno ahora mire lo siguiente:
+
+--
+
+&lt;iframe src='https://flo.uri.sh/visualisation/12174300/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:90%;height:500px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'&gt;&lt;/iframe&gt;&lt;div style='width:90%!;margin-top:4px!important;text-align:right!important;'&gt;&lt;a class='flourish-credit' href='https://public.flourish.studio/visualisation/12174300/?utm_source=embed&amp;utm_campaign=visualisation/12174300' target='_top' style='text-decoration:none!important'&gt;&lt;img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'&gt; &lt;/a&gt;&lt;/div&gt;
+
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f6/Lol_question_mark.png)
+background-size: cover
+
+# En su opinión ¿cuál es el valor más importante de los colombianos?
+
+---
+# Miremos
+
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0fef269437a1a3f4d368" style="width:756px;height:504px;"></div>
+<script type="application/json" data-for="htmlwidget-0fef269437a1a3f4d368">{"x":{"visdat":{"1756318650666":["function () ","plotlyVisDat"]},"cur_data":"1756318650666","attrs":{"1756318650666":{"x":{},"y":{},"marker":{"color":["rgba(222,45,38,0.8)","rgba(204,204,204,1)","rgba(204,204,204,1)","rgba(204,204,204,1)","rgba(204,204,204,1)","rgba(0,0,0,1)"]},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Sentimiento Colombianos","xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["Alegría","Amor","Esperanza","Familia","justicia","Solidaridad"]},"yaxis":{"domain":[0,1],"automargin":true,"title":""},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["Esperanza","Alegría","Solidaridad","Familia","Amor","justicia"],"y":[248,235,234,206,176,59],"marker":{"color":["rgba(222,45,38,0.8)","rgba(204,204,204,1)","rgba(204,204,204,1)","rgba(204,204,204,1)","rgba(204,204,204,1)","rgba(0,0,0,1)"],"line":{"color":"rgba(31,119,180,1)"}},"type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f6/Lol_question_mark.png)
+background-size: cover
+
+# A que va todo esto 🥲?
+
+---
+# En Economía
+
+--
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M326.7 403.7c-22.1 8-45.9 12.3-70.7 12.3s-48.7-4.4-70.7-12.3c-.3-.1-.5-.2-.8-.3c-30-11-56.8-28.7-78.6-51.4C70 314.6 48 263.9 48 208C48 93.1 141.1 0 256 0S464 93.1 464 208c0 55.9-22 106.6-57.9 144c-1 1-2 2.1-3 3.1c-21.4 21.4-47.4 38.1-76.3 48.6zM256 91.9c-11.1 0-20.1 9-20.1 20.1v6c-5.6 1.2-10.9 2.9-15.9 5.1c-15 6.8-27.9 19.4-31.1 37.7c-1.8 10.2-.8 20 3.4 29c4.2 8.8 10.7 15 17.3 19.5c11.6 7.9 26.9 12.5 38.6 16l2.2 .7c13.9 4.2 23.4 7.4 29.3 11.7c2.5 1.8 3.4 3.2 3.7 4c.3 .8 .9 2.6 .2 6.7c-.6 3.5-2.5 6.4-8 8.8c-6.1 2.6-16 3.9-28.8 1.9c-6-1-16.7-4.6-26.2-7.9l0 0 0 0 0 0c-2.2-.7-4.3-1.5-6.4-2.1c-10.5-3.5-21.8 2.2-25.3 12.7s2.2 21.8 12.7 25.3c1.2 .4 2.7 .9 4.4 1.5c7.9 2.7 20.3 6.9 29.8 9.1V304c0 11.1 9 20.1 20.1 20.1s20.1-9 20.1-20.1v-5.5c5.3-1 10.5-2.5 15.4-4.6c15.7-6.7 28.4-19.7 31.6-38.7c1.8-10.4 1-20.3-3-29.4c-3.9-9-10.2-15.6-16.9-20.5c-12.2-8.8-28.3-13.7-40.4-17.4l-.8-.2c-14.2-4.3-23.8-7.3-29.9-11.4c-2.6-1.8-3.4-3-3.6-3.5c-.2-.3-.7-1.6-.1-5c.3-1.9 1.9-5.2 8.2-8.1c6.4-2.9 16.4-4.5 28.6-2.6c4.3 .7 17.9 3.3 21.7 4.3c10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-4.4-1.2-14.4-3.2-21-4.4V112c0-11.1-9-20.1-20.1-20.1zM48 352H64c19.5 25.9 44 47.7 72.2 64H64v32H256 448V416H375.8c28.2-16.3 52.8-38.1 72.2-64h16c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V400c0-26.5 21.5-48 48-48z"/></svg> El principal .RUred[problema] en economía es que hay que reconocer que todo es **escaso**.
+
+--
+
+- El agua, los bosques, el cobre, los osos pandas, el aire limpio.
+
+--
+
+- El tiempo, la calidad de de vida (*medido en esperanza*), la concentración.
+
+--
+
+### Escasez 
+
+--
+
+&gt; No existen los suficientes bienes para satisfacer las necesidades ilimitadas de los individuos.
+
+--
+
+- Sin embargo... por lo pronto nos las arreglamos
+
+---
+.center[**Estándar de vida creciendo**]
+.center[![Gapminder](gapminder.gif)]
+
+
+---
+class: title-slide-section-grey, middle, center
+
+# Comos nos organizamos en economía
+
+---
+# Como nos organizamos
+
+--
+
+En teoría buscamos responder a tres (3) preguntas fundamentales:
+
+--
+
+1. Qué .RUred[producir]?
+2. Cómo .RUred[producirlo]?
+3. Para quién .RUred[producir]?
+
+--
+
+&gt; La forma en que las sociedades actúan ante estas cuestiones tiene importantes consecuencias para mitigar los costos de la escasez.
+
+---
+# Como nos organizamos
+
+--
+
+Un par de dichos:
+
+--
+
+### Karl Marx:
+
+&gt; "De cada uno, según su capacidad; a cada uno, según su necesidad."
+
+--
+
+### Juan el Bautista:
+
+&gt; "El que tiene dos túnicas debe compartirlas con el que no tiene ninguna; y el que tiene comida debe hacer lo mismo."
+
+--
+
+### Winston Churchill:
+
+&gt; "El vicio inherente del capitalismo es el reparto desigual de las bendiciones; la virtud inherente al socialismo es el reparto igualitario de las miserias."
+
+
+---
+# Como nos organizamos
+
+--
+
+### Feudalismo
+&gt; Un sistema económico basado en jerarquías rígidas y en la tradición.
+- Si tus padres eran siervos, tú también lo eras.
+- Sistema económico dominante en Europa durante la Edad Media.
+
+--
+
+### Mercantilismo
+&gt; Sistema económico en el que el gobierno distribuye derechos para determinadas actividades económicas.
+- El comercio de pieles.
+- El gobierno decide qué, cómo y para quién producir.
+- Sistema económico dominante durante el Renacimiento.
+
+---
+# Como nos organizamos
+
+--
+
+### Capitalismo
+&gt; Sistema económico basado en la propiedad privada, los mercados y las empresas.
+Anima a los individuos a actuar en su propio interés, mientras que las fuerzas del mercado de la oferta y la demanda coordinan las actividades individuales.
+- Los bienes se distribuyen a cada uno según su capacidad, esfuerzo y propiedad heredada.
+- En principio, los individuos determinan qué, cómo y para quién producir.
+- Sistema económico dominante desde la Revolución Industrial.
+
+---
+# Como nos organizamos
+
+--
+
+### Socialismo
+&gt; Un sistema económico basado en la buena voluntad de los individuos hacia los demás, no en su propio interés.
+- No hay propiedad privada: el Estado es propietario de los medios de producción.
+- En principio, la sociedad determina qué, cómo y para quién producir.
+- Sistema económico dominante en Europa del Este, China y algunas partes de África, el Sudeste Asiático y América Latina durante la década de 1900.
+
+
+---
+# Descripción
+
+--
+
+&lt;midd-blockquote&gt;Este curso proporciona una introducción a la microeconomía, centrado exclusivamente en los conceptos de la economía en general utilizando elementos básicos de **cálculo diferencial** 😢y de alguna manera de la .RUred[estadística] 😬&lt;/midd-blockquote&gt;
+
+--
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg> Se hace énfasis en el lenguaje .RUred[matemático].
+
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/dc/Beziehungen_zwischen_Nutzenmaximierungs-_und_Ausgabenminimierungsproblem.png)
+background-size: cover
+# Qué es la Microeconomía? 
+
+---
+# Qué es la Microeconomía?
+
+--
+
+- **Economía**: *Un sistema donde se coordinan las actividades productivas de una sociedad*
+
+--
+
+- **Economía de Mercado**: *Es una economía donde se toman decisiones de producción y consumo de bienes y servicios*
+
+--
+
+- **Mano invisible**: *La forma en la cual los individuos persiguen a como de lugar su propio bienestar, sin embargo eso conlleva a resultados mejores para una sociedad como un todo*
+
+---
+# Qué es la Microeconomía?
+
+--
+
+&gt; **Microeconomía** tiene que ver con entender el comportamiento "individual".
+
+--
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg> **Consumidores** *Tienen decisiones de compra*
+
+--
+
+- Si tu cantante (artista) favorito llega a la ciudad, comprarías una boleta en $797.000?
+
+--
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg> **Empresas** *Tienen decisiones de compra de insumos*
+
+--
+
+- Cuantos trabajadores vas a contratar y cuanto de maquinaria vas adquirir?
+
+--
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:grey;overflow:visible;position:relative;"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg> **Reguladores** *El estado puede anticipar cuantas firmas y consumidores habrá en los distintos mercados*
+
+--
+
+- Pueden las herramientas de política pública, tales como los impuestos, tasas, sobretasas ser beneficiosos para la sociedad?
+
+---
+# Qué es la Microeconomía?
+
+--
+
+&gt; El comportamiento de los *agentes económicos* es investigado bajo la hipotesis de la **Racionalidad**:
+
+--
+
+- Cada *agente* busca .RUred[maximizar] su bienestar (p.e., la utilidad de los consumidores, o beneficios de la empresa), dados ciertos recursos (restricciones) y la información con la que se cuenta o se tiene acceso.
+
+--
+
+## Dos contextos:
+
+--
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:grey;overflow:visible;position:relative;"><path d="M482.3 192c34.2 0 93.7 29 93.7 64c0 36-59.5 64-93.7 64l-116.6 0L265.2 495.9c-5.7 10-16.3 16.1-27.8 16.1l-56.2 0c-10.6 0-18.3-10.2-15.4-20.4l49-171.6L112 320 68.8 377.6c-3 4-7.8 6.4-12.8 6.4l-42 0c-7.8 0-14-6.3-14-14c0-1.3 .2-2.6 .5-3.9L32 256 .5 145.9c-.4-1.3-.5-2.6-.5-3.9c0-7.8 6.3-14 14-14l42 0c5 0 9.8 2.4 12.8 6.4L112 192l102.9 0-49-171.6C162.9 10.2 170.6 0 181.2 0l56.2 0c11.5 0 22.1 6.2 27.8 16.1L365.7 192l116.6 0z"/></svg> Cuando un agente busca maximizar su propio bienestar (sobre todo el material) y no le interesa lo demás.
+
+--
+
+<svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M482.3 192c34.2 0 93.7 29 93.7 64c0 36-59.5 64-93.7 64l-116.6 0L265.2 495.9c-5.7 10-16.3 16.1-27.8 16.1l-56.2 0c-10.6 0-18.3-10.2-15.4-20.4l49-171.6L112 320 68.8 377.6c-3 4-7.8 6.4-12.8 6.4l-42 0c-7.8 0-14-6.3-14-14c0-1.3 .2-2.6 .5-3.9L32 256 .5 145.9c-.4-1.3-.5-2.6-.5-3.9c0-7.8 6.3-14 14-14l42 0c5 0 9.8 2.4 12.8 6.4L112 192l102.9 0-49-171.6C162.9 10.2 170.6 0 181.2 0l56.2 0c11.5 0 22.1 6.2 27.8 16.1L365.7 192l116.6 0z"/></svg> Cuando maximiza su bienestar y el de otros agentes (permitiendo incluso el altruismo).
+
+---
+# El tema de la escasez
+
+--
+
+&gt; La **escasez** se da porque en el mundo todo tiene un .RUred[límite]!!. Los *recursos* son limitados y no se pueden satisfacer todas las necesidades que se tienen.
+
+--
+
+### Pregunta:
+
+--
+
+<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:grey;overflow:visible;position:relative;"><path d="M224 256A128 128 0 1 1 224 0a128 128 0 1 1 0 256zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 36-146.9c2-8.1 9.8-13.4 17.9-11.3c70.1 17.6 121.9 81 121.9 156.4c0 17-13.8 30.7-30.7 30.7H285.5c-2.1 0-4-.4-5.8-1.1l.3 1.1H168l.3-1.1c-1.8 .7-3.8 1.1-5.8 1.1H30.7C13.8 512 0 498.2 0 481.3c0-75.5 51.9-138.9 121.9-156.4c8.1-2 15.9 3.3 17.9 11.3l36 146.9 33.4-123.9z"/></svg> Qué señales de escasez percibe usted?, que indicador es el mas apropiado para medirla?
+---
+# El tema de la escasez
+
+--
+
+### Qué tan escasos son estos productos?
+
+--
+
+&lt;img src="images/wateranddiamonds.png" width="1412" style="display: block; margin: auto;" /&gt;
+---
+# Estática comparativa
+
+--
+
+&lt;midd-blockquote&gt;La estática comparativa nos permite medir los cambios en el comportamiento de un **consumidor** cuando varia *solo una* variable (p.e., el precio de algo)&lt;/midd-blockquote&gt;
+
+--
+
+- Si tu cantante (artista) favorito llega a la ciudad, comprarias una boleta en $797.000?
+
+--
+
+- .RUred[R./] SI
+
+--
+
+- Puede ser diferente su decisión si entonces la (misma) boleta *aumenta* a $1'365.000?
+
+---
+# Estática comparativa
+
+--
+
+### Elección bajo incertidumbre
+
+--
+
+Existen elementos y situaciones que hacen que el consumidor se enfrente a hechos con incertidumbre.
+
+--
+
+**P.e**: Qué resulta mejor: Aceptar un trabajo donde .RUred[fijo] por año se gana 75 millones/año -lo que es aprox. 6'250.000/mes- (100% de prob.) o trabajar para una empresa (start-up) que paga 120 millones/año si en la *bolsa de valores* crecen sus acciones (30% probabilidad) o 40 millones/año si esto no ocurre (70% de probabilidad)  
+
+--
+
+Opción A: `$$75'000.000 \times (1)=75'000.000$$` 
+
+--
+
+Opción B: `$$120'000.000 \times (0.3)+ 40'000.000 \times (0.7)=64'000.000$$` 
+
+--
+
+**P:** Cuál elige?
+
+---
+# Estática comparativa
+
+--
+
++ Actitudes frente al .RUred[riesgo]
+
+--
+
++ Medidas de aversión al riesgo. (Primas de riesgo)
+
+
+--
+
++ Las funciones matemáticas nos dice un poco como se comportan las personas y si prefieren ser .RUred[riesgosas] o si prefieren ser aversas al riesgo.
+
++ Algunas `funciones` de riesgo se asocian al estilo de una `\(f(x)\)`. Si mira el tipo de función que es una persona. Entonces tendremos funciones de utilidad como:
+
+--
+
+`$$\text{Amante al riesgo}= U(x)=x^{3}\;o\; e^{x} \quad \text{Averso}= U(x)=\sqrt{x}\;o\;Ln(x)$$`
+
+---
+# Estatica comparativa (Averso al riesgo)
+
+--
+
+&lt;img src="Class1_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+# Estatica comparativa (Gusto al riesgo)
+
+--
+
+&lt;img src="Class1_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+# Midiendo con riesgo
+
+--
+
+Asuma que la **función de utilidad** es de: `\(U(x)=\sqrt{x}\)`
+
+--
+
+Opción A: `$$\sqrt{75'000.000} \times (1)=8660$$` 
+
+--
+
+Opción B: `$$\sqrt{120'000.000} \times (0.3)+ \sqrt{40'000.000} \times (0.7)=7713$$` 
+
+--
+
+**P:** Cuál elige ahora?
+
+--
+
+**R./** Como es averso/a al riesgo entonces se queda con la A.
+
+---
+# Midiendo con riesgo
+
+--
+
+Asuma que la **función de utilidad** es de: `\(U(x)=x^{3}\)`
+
+--
+
+Opción A: `$$75'000.000^{3} \times (1)=4.21^{+}23$$` 
+
+--
+
+Opción B: `$$120'000.000^3 \times (0.3)+ 40'000.000^{3} \times (0.7)=5.63^{+}23$$` 
+
+--
+
+**P:** Cuál elige ahora?
+
+--
+
+**R./** Como es amante al riesgo entonces se va con la B.
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://media.giphy.com/media/10EhgJKAOVJ6/giphy.gif)
+background-size: cover
+# Como toman decisiones los individuos? 
+
+
+---
+# Como toman decisiones los individuos?
+
+--
+
+- Enfrentando disyuntivas, p.e., *Escoger una carrera profesional*
+
+--
+
+- Teniendo en cuenta los .RUred[costos] (no necesariamente monetarios)
+
+--
+
+- Incentivos
+
+--
+
+- Pensamiento marginal
+
+--
+
+- Razones de intercambio
+
+---
+# Costo de oportunidad: Ejemplo 1
+
+--
+
+
+
+&lt;img src="Class1_files/figure-html/ex1-1.png" style="display: block; margin: auto;" /&gt;
+---
+# Costo de oportunidad: Ejemplo 1
+
+--
+
+Suponga que un **país** cuenta con producción especifica de Automomoviles y Computadores.
+
+--
+
+*Opción A*: Producir 20 Autos y 200 computadores
+*Opción B*: Producir 25 Autos y 160 computadores
+
+--
+
+Calcule el costo de oportunidad de un automóvil frente a los (computadores):
+
+--
+
+`$$\frac{(25-20)}{(160-200)}=\frac{5}{-40}=-0.125$$`
+--
+
+Ahora el costo de oportunidad de los computadores frente a los autos:
+
+--
+
+`$$\frac{(160-200)}{(25-20)}=\frac{-40}{5}=-8$$`
+
+--
+
+&lt;midd-blockquote&gt;Para producir un automóvil debe renunciar a 8 unidades de computadores&lt;/midd-blockquote&gt;
+
+--
+
+Ademas en sentido contrario
+
+--
+
+&lt;midd-blockquote&gt;Para producir un computador debe renunciar a 0.125 unidades de Autos&lt;/midd-blockquote&gt;
+
+---
+# Costo de oportunidad: Ejemplo 2
+
+--
+
+&lt;img src="images/trade-off.png" width="2145" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ee/La_econom%C3%ADa_circular_50.jpg)
+background-size: cover
+# Un Vistazo a los temas del curso
+
+---
+# Teoría del Consumidor
+
+--
+
+&gt; Un modelo que represente al **consumidor**.
+
+--
+
+- Nociones de cestas de bienes y servicios
+
+--
+
+- Como manejar las preferencias
+
+--
+
+- Como se representan, que es una función de bienestar y/o utilidad
+
+--
+
+- Decisiones optimas de compra
+
+--
+
+- Curvas de Demanda y Oferta, equilibrio de mercado.
+
+---
+# Teoría del Productor
+
+--
+
+&gt; Un modelo que represente al **Productor** y/o **Empresa**.
+
+--
+
+- Decisión optima de producción
+
+--
+
+- Restricción tecnológica 
+
+--
+
+- Costos de Producción
+
+--
+
+&gt; Un sistema de **Mercado**
+
+--
+
+- Mercado de competencia
+
+--
+
+- Monopolio
+
+--
+
+- Otras formas del mercado
+
+
+---
+class: title-slide-section-grey
+# Bibliografía
+
+<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg> Mankiw, N. G. (2005). *Principios de microeconomía* /N. Gregory Mankiw (No. 338.5 M55Y.).
+
+<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg> Pindyck, R. S., Rubinfeld, D. L., &amp; Rabasco, E. (2013). *Microeconomía*. Pearson Italia..
+
+<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg> Krugman, P., &amp; Wells, R. (2014). *Microeconomics (for AP)*. New York: Worth Publishers.
+
+<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg> Muñoz-Garcia, F. (2017). *Advanced microeconomic theory: an intuitive approach with examples*. MIT Press.
+
+
+---
+class: title-slide-final, middle
+
+# Gracias por su atención!
+
+## Alguna pregunta adicional?
+
+### Carlos Andres Yanes Guerra
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg> cayanes@uninorte.edu.co
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:blue;overflow:visible;position:relative;"><path d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg> Universidad del Norte
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://www.jvcasillas.com/midd_xaringan/js/midd_xaringan.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

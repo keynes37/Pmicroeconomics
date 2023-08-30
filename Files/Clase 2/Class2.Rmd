@@ -1,0 +1,695 @@
+---
+title: "Principios de Microeconomía"
+subtitle: "Demanda y oferta"
+author: "Carlos Yanes Guerra"
+date: "Universidad del Norte </br> 4 de Agosto 2023"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["middlebury", "middlebury-fonts"]
+    nature:
+      beforeInit: "https://www.jvcasillas.com/midd_xaringan/js/midd_xaringan.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: false
+---
+name: xaringan-title
+class: left, middle
+
+
+# Principios de Microeconomía
+<br>
+## Demanda y Oferta
+<br>
+<br>
+<img src="images/lognig.png" width="280" />
+
+### Carlos Yanes | Departamento de Economía | `r Sys.Date()`
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(broom, latex2exp, ggplot2, ggthemes, ggforce, viridis, dplyr, magrittr, knitr, parallel)
+
+library(tidyverse)
+library(babynames)
+library(fontawesome) # from github: https://github.com/rstudio/fontawesome
+library(DiagrammeR)
+library(hrbrthemes)
+library(econocharts)
+library(plotly)
+
+# Knitr options
+
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 7,
+  warning = F,
+  message = F
+)
+```
+---
+class: middle, inverse
+
+.left-column[
+
+# `r emo::ji("sweat_smile")`
+
+]
+
+.right-column[
+# Preguntas de la sesion anterior?
+]
+---
+class: title-slide-section-grey, middle
+
+# Principios de Economía
+
+<br>
+<img src="images/lognig.png" width="380" />
+
+---
+# Principios de Economía
+
+--
+
+### Decisión de un individuo
+
+--
+
+> Los individuos al **elegir** o al tomar una decisión por hacer/tomar algo necesariamente *renuncian* a otro bien/servicio.
+
+--
+
+`r fa("check-square", fill="red")` Detrás de la elección y/o decisión de los individuos hay:
+
+--
+
+- Recursos escasos 
+
+--
+
+- El costo "real" de algo es la oportunidad de haber realizado otra cosa.
+
+--
+
+<div align="center">
+![:scale 60%](images/resources.png)
+---
+# Principios de Economía
+
+--
+
+> Recuerde: El verdadero costo de un *bien* es su **costo de oportunidad**.
+
+--
+
+`r fa("bell", fill="grey")` El costo de asistir a la clase de principios de micro es: *estar viendo televisión?*; *estar trabajando?*; *estar en la playa?*; *haber elegido otro profesor?* 😩
+
+--
+
+- Esto resulta subjetivo, sin embargo, es el .black[sacrificio] sobre todo de su tiempo.
+
+--
+
+## Respecto a incentivos
+
+--
+
+`r fa("car", fill="blue")` Todos respondemos y reaccionamos frente a lo que nos ocurre:
+
+--
+
+  - Sube precio de la gasolina $\Rightarrow$ compramos vehículos eléctricos.
+  
+--
+  
+  - Pagan mas salario siendo [influencers](https://www.remitly.com/gb/en/landing/dream-jobs-around-the-world) $\Rightarrow$ dejamos de estudiar la carrera. 
+  
+--
+
+Recuerde ademas que tenemos incentivos: **Positivos** y **Negativos** 
+
+
+---
+class: title-slide-section-grey, middle
+
+# Demanda
+
+<br>
+<img src="images/lognig.png" width="380" />
+
+---
+# Demanda
+
+--
+
+### Qué consumen (demandan) los Colombianos?
+
+--
+
+```{r, gr1, echo=FALSE}
+# Base de datos
+library(readxl)
+datos1 <- read_excel("datos1.xlsx")
+
+data = datos1 %>% arrange(tipo, elemento, valor)
+
+# Barras de separacion
+empty_bar=3
+to_add = data.frame( matrix(NA, empty_bar*nlevels(data$tipo), ncol(data)) )
+colnames(to_add) = colnames(data)
+to_add$tipo=rep(levels(data$tipo), each=empty_bar)
+data=rbind(data, to_add)
+data=data %>% arrange(tipo)
+data$id=seq(1, nrow(data))
+
+# Barras
+label_data=data
+number_of_bar=nrow(label_data)
+angle= 90 - 360 * (label_data$id-0.5) /number_of_bar     # I substract 0.5 because the letter must have the angle of the center of the bars. Not extreme right(1) or extreme left (0)
+label_data$hjust<-ifelse( angle < -90, 1, 0)
+label_data$angle<-ifelse(angle < -90, angle+180, angle)
+
+# Armar base de datos
+base_data=data %>% 
+  group_by(tipo) %>% 
+  summarize(start=min(id), end=max(id) - empty_bar) %>% 
+  rowwise() %>% 
+  mutate(title=mean(c(start, end)))
+
+# Preparacion de escala de grises
+grid_data = base_data
+grid_data$end = grid_data$end[ c( nrow(grid_data), 1:nrow(grid_data)-1)] + 1
+grid_data$start = grid_data$start - 1
+grid_data=grid_data[-1,]
+
+# Grafico
+p = ggplot(data, aes(x=as.factor(id), y=value, fill=tipo)) +   
+  geom_bar(aes(x=as.factor(id), y=valor, fill=tipo), stat="identity", alpha=0.5) +
+  
+  # Adherir al barras
+  geom_segment(data=grid_data, aes(x = end, y = 80, xend = start, yend = 80), colour = "grey", alpha=1, size=0.4 , inherit.aes = FALSE ) +
+  geom_segment(data=grid_data, aes(x = end, y = 60, xend = start, yend = 60), colour = "grey", alpha=1, size=0.4 , inherit.aes = FALSE ) +
+  geom_segment(data=grid_data, aes(x = end, y = 40, xend = start, yend = 40), colour = "grey", alpha=1, size=0.4 , inherit.aes = FALSE ) +
+  geom_segment(data=grid_data, aes(x = end, y = 20, xend = start, yend = 20), colour = "grey", alpha=1, size=0.4 , inherit.aes = FALSE ) +
+  geom_segment(data=grid_data, aes(x = end, y = 0, xend = start, yend = 0), colour = "grey", alpha=1, size=0.4 , inherit.aes = FALSE ) +
+  # Adición de lineas a las barras
+  annotate("text", x = rep(max(data$id),5), y = c(0, 20, 40, 60, 80), label = c("0","20", "40", "60", "80") , color="grey", size=5 , angle=0, fontface="bold", hjust=1) +
+  
+  geom_bar(aes(x=as.factor(id), y=valor, fill=tipo), stat="identity", alpha=0.5) +
+  ylim(-100,120) +
+  coord_polar() +
+    theme_minimal() +
+  theme(
+    legend.position = "none",
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    plot.margin = unit(rep(-1,4), "cm") 
+  ) +
+  geom_text(data=label_data, aes(x=id, y=valor, label=elemento, hjust=hjust), color="black", fontface="bold",alpha=0.6, size=4, angle= label_data$angle, inherit.aes = FALSE ) +
+  
+  # Base de informacion
+  geom_segment(data=base_data, aes(x = start, y = -7, xend = end, yend = -7), colour = "black", alpha=0.8, size=0.6 , inherit.aes = FALSE )  +
+  geom_text(data=base_data, aes(x = title, y = -18, label=tipo), hjust=c(0,1,1,0,0), colour = "black", alpha=0.8, size=5, fontface="bold", inherit.aes = FALSE)
+
+p
+```
+---
+# Demanda
+
+--
+
+$$Mercado \begin{Bmatrix}
+Compradores & \Rightarrow   & Demanda \\ 
+Vendedores & \Rightarrow  & Oferta
+\end{Bmatrix} Equilibrio$$
+
+--
+
+<midd-blockquote> **Mercado:** La interacción entre la oferta y la demanda da lugar a los mercados. Aquel .RUred[mecanismo] de asignación de bienes y servicios entre *vendedores* y *compradores*.</midd-blockquote>
+
+--
+
+`r fa("carrot", fill="orange")` La **demanda** o cantidad de consumo, depende del precio del mercado.
+
+--
+
+$$Q_D= D(p)$$
+
+--
+
+`r fa("cc-visa", fill="blue")` La .blue[oferta] o cantidad que se vende, depende del precio del mercado.
+
+--
+
+$$Q_S= S(p)$$
+
+--
+
+> La relación del precio con la demanda es .RUred[negativa], mientras que con la oferta es lo contrario **positiva**.
+
+---
+# Demanda
+
+--
+
+### Por qué expresó lo anterior mediante una ecuación?
+
+--
+
+`r fa("wrench", fill="blue")` ..."*Una ecuación es una expresión matemática simple que describe la relación entre dos o más variables, o cantidades, que son libres de asumir distintos valores en algún rango.*"...
+
+--
+
+En economía la variable que va a la izquierda del *igual* (=) de la ecuación se denomina .RUred[dependiente] y la que se encuentra en la derecha se le dice **variable independiente**
+
+--
+
+P.e: Una hora de alquiler de bicicleta cuesta $1000 mas 50 pesos el minuto adicional. Que ecuación podría explicar lo anterior?
+
+--
+
+$$\text{Precio final}=1000+50(T)$$
+_donde $T$ es el número de minutos adicionales_
+
+---
+# Demanda
+
+--
+
+.pull-left[
+| Precio | Demanda |
+|--------|---------|
+| $ 8    | 1       |
+| $ 5    | 2.7     |
+| $ 2.5  | 6       |
+| $ 1.5  | 9       |
+
+- Note que en la medida que el precio (.RUred[disminuye]) las cantidades aumentan]
+
+--
+
+.pull-right[
+```{r, demand1, echo=FALSE, message=FALSE}
+demand(main = "Demanda", # Title
+       sub = "Función con el precio",   # Subtitle
+       xlab = "Cantidades",      # X-axis label
+       ylab = "Precio",      # Y-axis label
+       names = "D[1]",  # Custom name for the curve
+       geomcol = 2)     # Color of the custom name of the curve
+```
+]
+---
+# Demanda 
+
+--
+
+.pull-left[- En algunos momentos tendremos *desplazamiento* a lo largo de la **curva de la demanda**.
+
+
+- Esos .RUred[casos] ocurren cuando la variable .black[precio] 💰 cambia.]
+
+--
+
+.pull-right[
+
+```{r, demand2, echo=FALSE}
+demand(ncurves = 1,            
+       type = "convex",        
+       x = c(8, 5, 3),         
+       linecol = 4,            
+       generic = TRUE,         
+       geom = "label",        
+       geomfill = "lightblue",
+       main = "Curva de demanda")
+```
+
+]
+
+---
+# Demanda
+
+--
+
+.pull-left[
+
+- En otros momentos tendremos *desplazamiento* hacia $(\uparrow)$ o hacia $(\downarrow)$ en el mapa de curvas.
+
+
+- Esos .RUred[casos] ocurren cuando otra variable distinta al .black[precio] 💰 influye en el mercado.]
+
+--
+
+.pull-right[
+
+```{r, demand3, echo=FALSE}
+p <- indifference(ncurves = 2, x = c(2, 4), linecol = 3, main = "Desplazamiento demanda", xlab = "Cantidad X", ylab = "Precio")
+
+int <- bind_rows(curve_intersect(data.frame(x = 1:1000, y = rep(3, nrow(p$curve))), p$curve + 1))
+
+p$p + geom_segment(data = int, aes(x = 0, y = y, xend = x, yend = y), lty = "dotted")  +
+      geom_segment(data = int, aes(x = x, y = 0, xend = x, yend = y), lty = "dotted") +
+      geom_point(data = int, size = 3)
+```
+
+]
+---
+class: title-slide-section-grey, middle
+
+# Oferta
+
+<br>
+<img src="images/lognig.png" width="380" />
+
+
+---
+# Oferta
+
+--
+
+.pull-left[
+| Precio | Oferta |
+|--------|---------|
+| $ 8    | 11       |
+| $ 5    | 7.5     |
+| $ 2.5  | 6       |
+| $ 1.5  | 1.4       |
+
+- Note que en la medida que el precio (.RUred[aumenta]) las cantidades *ofrecidas* aumentan]
+
+--
+
+.pull-right[
+```{r, Supply1, echo=FALSE, message=FALSE}
+supply(main = "Oferta", # Title
+       sub = "Función con el precio",   # Subtitle
+       xlab = "Cantidades",      # X-axis label
+       ylab = "Precio",      # Y-axis label
+       names = "S[1]",  # Custom name for the curve
+       geomcol = 1)     # Color of the custom name of the curve
+```
+]
+---
+class: title-slide-section-blue, middle
+
+# Oferta y Demanda
+
+<br>
+<img src="images/lognig.png" width="380" />
+
+---
+# Oferta y Demanda
+
+--
+
+`r fa("shopping-cart", fill="red")` Los **mercados** deben tender a un equilibrio. Si este no esta presente, lo mas probable es que se presenten desajustes con los precios y alguno de los individuos que en el interactuan saldrá "perjudicado".
+
+--
+
+```{r fig.height=5, fig.width=7, mark1, echo=FALSE}
+# datos
+supply1 <- data.frame(x = c(2, 7), y = c(2, 7))
+demand1 <- data.frame(x = c(7, 2), y = c(2, 7))
+
+p <- sdcurve(supply1,   # Custom data
+             demand1,
+             equilibrium = TRUE)
+p
+```
+---
+class: title-slide-section-blue, middle
+
+# Funciones de Demanda
+
+<br>
+<img src="images/lognig.png" width="380" />
+---
+# Funciones de Demanda
+
+--
+
+<midd-blockquote> La expresión .black[función] hace referencia a una .RUred[dependencia] de una *variable*. La teoría indica que la demanda regularmente es afectada por la variable .RUred[precio] y de forma .RUred[negativa].</midd-blockquote>
+
+--
+
+$$Q_{i}= C_{o} - \alpha P$$
+Donde $C_{0}$ es una constante y $(\alpha)$ es el parámetro de cambio de P.
+
+--
+
+`r fa("certificate", fill="red")` Un ejemplo es:
+
+--
+
+$$Q_{d}=50-5P$$
+--
+
+*Este tipo de funciones se construyen a partir de una función lineal y/o regresión*.
+
+--
+
+> Observe que si el precio es igual a **3$**, entonces la demanda de este mercado es de **35** unidades.
+
+--
+
+*Por ejemplo*: $Q_{d}=50-5(3)=35$
+
+---
+# Funciones de Demanda
+
+--
+
+> **Derivada de una función**: Es la razón o cambio de una variable en determinado punto. Muchas veces tiene que ver con la variación.
+
+--
+
+`r fa("certificate", fill="red")` Pendiente: .RUred[Forma matemática]
+
+--
+
+- Teniendo una linea, es claro que en matemáticas la formula es:
+$$Y=mx+b$$
+
+--
+
+Donde $m$ viene a ser la .black[pendiente] de la linea y $b$ el .black[intercepto]. La pendiente describe la tasa que cambia (Y) cuando (X) varia. Su forma es:
+
+--
+
+$$m=\frac{\triangle Y}{\triangle X}=\frac{Y_{2}-Y_{1}}{X_{2}-X_{1}}$$
+---
+# Funciones de Demanda
+
+--
+
+`r fa("key", fill="blue")` Los cambios en $Q$ (variable .black[dependiente]) ante un cambio en la variable $X$ (variable *independiente*), se expresan de tal forma que:
+
+--
+
+$$\text{Pendiente}=\frac{\text{Cambio en Q}}{\text{Cambio en X}}=\frac{\triangle Q}{\triangle X}=\frac{\partial Q}{\partial X}$$
+
+--
+
+*.RUred[Se debe tener presente que X puede ser precios, ingreso, precios de otros bienes (sustitutos), etc.]*
+
+--
+
+`r fa("comments", fill="red")` Un ejemplo de esto es:
+
+--
+
+$$Q_{d}=35-2P$$
+
+--
+
+La idea es hallar: **la derivada parcial de la función** con respecto al .black[precio] en este caso.
+
+--
+
+$$\frac{\partial Q}{\partial P}= -2$$
+--
+
+*Para esto*: La **interpretación** es por un cambio de una (1) unidad monetaria de los precios del bien (X), la demanda se reduce en dos (2) unidades.
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f6/Lol_question_mark.png)
+background-size: cover
+# ¿Para que me sirve entonces conocer la derivada de una función?
+
+---
+# Derivada
+
+--
+
+> La **derivada** nos brinda información a partir de los precios la forma en como reacciona un mercado especifico. Tambien nos ayuda a *clasificar* los bienes que consume un individuo.
+
+--
+
+Los bienes se clasifican como:
+
+--
+
+- Bienes **normales**. P.e: dependen del Precio y del ingreso.
+
+--
+
+- Bienes **inferiores**. P.e: dependen solo del ingreso.
+
+--
+
+- Bienes de **lujo**. P.e: dependen solo del precio.
+
+--
+
+*Con derivada*:
+
+--
+
+`r fa("tablet", fill="blue")` Bienes de **Lujo** lo hacen de forma:     
+$$\frac{\partial Q}{\partial p} =\left ( + \right )$$
+--
+
+`r fa("tablet", fill="blue")` Para los Bienes **Normales** la forma es:
+$$\frac{\partial Q}{\partial p} =\left ( - \right ) \; \wedge \; \frac{\partial Q}{\partial I} =\left ( +  \right )$$
+---
+# Derivada
+
+--
+
+$$\textrm{Tipos de Bienes}
+\begin{cases}
+P_{x}\uparrow  & \Rightarrow  x\downarrow \text{Normal} \\ 
+I_{x}\uparrow  & \Rightarrow  x\uparrow \text{Normal} \\ 
+P_{x}\uparrow  & \Rightarrow  x\uparrow \text{Lujo}  \\ 
+I_{x}\uparrow  & \Rightarrow  x\downarrow \text{Inferior} 
+\end{cases}$$
+
+--
+
+
+### Frente a signos, operadores y demás
+
+--
+
+Es importante tener en cuenta lo siguiente:
+
+- Los signos de *respuesta* sirven para clasificar.
+
+--
+
+- Los *cambios* de las .black[variables] son representados por el signo $(\partial)$ que hace parte en calculo de derivadas.
+
+--
+
+- Los estamentos $(+)$, pueden ser reemplazados por los signos de $(>)$ o menor $(<)$ a cero dada la circunstancia.
+
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f6/Lol_question_mark.png)
+background-size: cover
+# ¿Y los equilibrios de mercado?
+
+---
+# Ejercicio de equilibrio de mercado
+
+--
+
+Suponga que un mercado posee las siguientes características:
+$$Q_{d}=1000-100p$$
+$$Q_{s}=-120+100p$$
+
+--
+
+`r fa("dice-one", fill="red")` ¿Cuál es el *precio* de equilibrio?
+
+--
+
+`r fa("dice-two", fill="red")` ¿Cuál es el *precio mínimo* que esta dispuesto a aceptar el productor para poder ofrecer algo en ese mercado?
+
+---
+# Ejercicio de equilibrio de mercado
+
+--
+
+`r fa("dice-one", fill="red")` Solo es tomar las dos funciones y enfrentarlas
+
+--
+$$Q_{d}=Q_{s}$$
+
+--
+
+$$1000-100p=-120+100p$$
+--
+
+*Terminos comunes de un lado a otro (despeje)*
+
+$$1000+120=100p+100p$$
+--
+
+$$1120=200p$$
+--
+
+*Despeja a $(p)$ y listo*
+
+$$\frac{1120}{200}=p= \$ 5.6$$
+---
+# Ejercicio de equilibrio de mercado
+
+--
+
+`r fa("dice-two", fill="red")` Debe siquiera vender una unidad
+
+--
+
+*Toma la función de oferta*
+
+$$1=-120+100p$$
+
+--
+
+*Terminos comunes a un lado*
+
+$$121=100p$$
+--
+
+*Despeja $(p)$ y ya lo tiene*
+
+$$\frac{121}{100}=p=\$ 1.21$$ 😛
+
+--
+
+.RUred[Menos de ese precio no va a vender nada en ese mercado]
+---
+class: title-slide-section-grey, middle, center
+background-image: url(https://media.giphy.com/media/10PMpMkNZgnqvK/giphy.gif)
+background-size: cover
+
+---
+class: title-slide-section-grey
+# Bibliografía
+
+`r fa('book')` Mankiw, N. G. (2005). *Principios de microeconomía* /N. Gregory Mankiw (No. 338.5 M55Y.).
+
+`r fa('book')` Pindyck, R. S., Rubinfeld, D. L., & Rabasco, E. (2013). *Microeconomía*. Pearson Italia..
+
+`r fa('book')` Krugman, P., & Wells, R. (2014). *Microeconomics (for AP)*. New York: Worth Publishers.
+
+`r fa('book')` Muñoz-Garcia, F. (2017). *Advanced microeconomic theory: an intuitive approach with examples*. MIT Press.
+
+
+---
+class: title-slide-final, middle
+
+# Gracias por su atención!
+
+## Alguna pregunta adicional?
+
+### Carlos Andres Yanes Guerra
+`r fa("envelope", fill="red")` cayanes@uninorte.edu.co
+`r fa("university", fill="blue")` Universidad del Norte
