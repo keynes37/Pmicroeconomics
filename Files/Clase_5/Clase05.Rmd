@@ -68,26 +68,6 @@ class: middle, inverse
 ]
 
 ---
-class: title-slide-section-blue, middle
-
---
-
-## Felicitaciones a
-
---
-
-.pull-left[
-- .white[Natalia Peinado 🥇]
-- .white[Orlando Lora 🥇 1:46]
-- .white[Santiago Quintero 2:15]
-- .white[Nathalia Quintero 2:26]
-]
-
-]
-
-.pull-right[![](https://media.giphy.com/media/l4q8cJzGdR9J8w3hS/giphy.gif)]
-
----
 # Sobre el uso de las matematicas
 
 --
