@@ -404,7 +404,7 @@ Existen desde luego .RUred[costos explícitos] y costos .RUred[implícitos]
 
 `r fa("lightbulb", fill="blue")` Ejemplo:
 
-+ Necesita 10 millones de pesos para iniciar un negocio. La tasa que se lo prestan es al 5% anual. La tasa de Ahorro es del 2%
++ Necesita 10 millones de pesos para iniciar un negocio. La tasa que se lo prestan es al 5% anual. La tasa de Ahorro es del 2% y posee 4 millones en su cuenta débito.
 
 --
 
@@ -420,10 +420,74 @@ Ahorros: 4.000.000;  Costo implícito: $80.000
 .RUred[Total costos]: 380.000 en el nivel 2 y de 500.000 para el nivel 1. *La mejor opción quizas sea tomar el nivel 2*
 
 ---
+# Teoría del Productor
+
+--
+
+### Diferencia entre costo contable y económico
+
+--
+
+<font size="+3"> Beneficio Contable = Ganancia total - .RUred[Costo explicito]</font>
+
+<br/>
+
+<font size="+3"> Beneficio Económico= Ganancia total - .RUred[Costo explicito] + .blue[**Implicito**]</font>
+
+--
+
+> Cuál de los siguiente es verdadero?
+
+--
+
+**A.** Beneficio contable > Beneficio económico
+
+**B.** Beneficio contable < Beneficio económico
+
+---
+# Teoría del Productor
+
+
+
+### Diferencia entre costo contable y económico
+
+
+
+<font size="+3"> Beneficio Contable = Ganancia total - .RUred[Costo explicito]</font>
+
+<br/>
+
+<font size="+3"> Beneficio Económico= Ganancia total - .RUred[Costo explicito] + .blue[**Implicito**]</font>
+
+
+
+> Cuál de los siguiente es verdadero?
+
+
+
+**A.** .RUred[Beneficio contable > Beneficio económico]
+
+**B.** Beneficio contable < Beneficio económico
+
+---
+# Teoría del Productor
+
+--
+
+Un beneficio .blue[**contable**] positivo no siempre significa que una empresa vaya bien.
+
+--
+
+- Beneficio económico < 0 ==> La empresa actual es menos rentable que la siguiente mejor opción.
+ 
+- Beneficio económico = 0 ==> La empresa actual es tan rentable como la siguiente mejor opción.
+ 
+- Beneficio económico > 0 ==> La empresa actual es más rentable que la siguiente mejor opción.
+
+---
 class: inverse, middle
 
 # Como es lo del producto?
-
 
 ---
 # Producto total
@@ -481,6 +545,42 @@ ggplot() +
   geom_ribbon(aes(x = u, ymin = 0, ymax = 65), fill = purple, alpha = 0.2, linetype = "blank")
 ```
 ]
+
+---
+# Producto total
+
+--
+
+.left-column[
+Hay un **producto marginal** que ayuda a definir muchos sucesos en la empresa
+]
+
+.right-column[
+```{r, echo = FALSE, fig.height = 5, fig.width = 5, dev = "svg"}
+x <- 0:10
+total_product <- function(x) 3*x - 0.5*x^3 + 4*x^2 
+q_1 <- total_product(3)
+q_2 <- total_product(4)
+
+ggplot(data = data.frame(x = 0), mapping = aes(x = x)) +
+  scale_x_continuous(limits = c(0, 7.5), expand=c(0,0), breaks = seq(0,7,1)) +
+  scale_y_continuous(limits = c(0, 65), expand=c(0,0), breaks = seq(0,60,10)) +
+  theme_market +
+  labs(x = "L", y = "Q") +
+  stat_function(fun = total_product, color = purple, size = 1) +
+  geom_point(aes(x = 3, y = q_1), color = met_slate, size = 2) +
+  geom_point(aes(x = 4, y = q_2), color = met_slate, size = 2) +
+  geom_segment(aes(x = 3, y = 0, xend = 3, yend = q_1), linetype  = "dashed", color = met_slate, size = 1) +
+  geom_segment(aes(x = 4, y = 0, xend = 4, yend = q_2), linetype  = "dashed", color = met_slate, size = 1) +
+  geom_segment(aes(x = 0, y = q_1, xend = 3, yend = q_1), linetype  = "dashed", color = met_slate, size = 1) +
+  geom_segment(aes(x = 0, y = q_2, xend = 4, yend = q_2), linetype  = "dashed", color = met_slate, size = 1) +
+  geom_segment(aes(x = 3 + 0.1, y = 10, xend = 4 - 0.1, yend = 10), arrow = arrow(angle = 20, length = unit(0.4,"cm"), type = "closed"), color = met_slate, size = 1) +
+  geom_segment(aes(x = 0.5, y = q_1 + 0.75, xend = 0.5, yend = q_2 - 0.75), arrow = arrow(angle = 20, length = unit(0.4,"cm"), type = "closed"), color = met_slate, size = 1) +
+  annotate("text", label = expression(Delta*"Q"=="Producto Marginal "), x = 2, y = (q_1 + q_2)/2, color = met_slate, family = "Fira Sans", size = 4) +
+  annotate("text", label = expression(Delta*"L"==1), x = 3.5, y = 7.5, color = met_slate, family = "Fira Sans", size = 4)
+```
+]
+
 ---
 class: inverse, middle
 
