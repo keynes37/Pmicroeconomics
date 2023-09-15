@@ -125,17 +125,11 @@ class: title-slide-section-blue, middle
 
 --
 
-## Felicitaciones a: 
+## Esta vez no hubo ganadores en 5.0
 
 --
 
-<font size="+8">$$\color{#fcfdff}{3 \; \text{estudiantes...}}$$</font>
-
---
-
-🥇 Jenifer Ariza 3:52
-➡️ Samir Fayad 4:14
-➡️ Alexander Estupiñan 4:20
+### Solo 17 estudiantes lograron un 80%
 
 ---
 class: title-slide-section-grey, middle
@@ -216,7 +210,7 @@ knitr::include_graphics("images/g1.png")
 --
 
 <div align="center">
-![:scale 60%](images/g2.png)
+![:scale 80%](images/g2.png)
 </div align="center">
 
 --
@@ -265,18 +259,18 @@ layout: true
 ---
 
 <div align="center">
-![:scale 40%](images/c1.png)
+![:scale 60%](images/c1.png)
 </div align="center">
 
 ---
 
 <div align="center">
-![:scale 40%](images/c2.png)
+![:scale 60%](images/c2.png)
 </div align="center">
 ---
 
 <div align="center">
-![:scale 60%](images/c3.png)
+![:scale 75%](images/c3.png)
 </div align="center">
 ---
 layout: false
