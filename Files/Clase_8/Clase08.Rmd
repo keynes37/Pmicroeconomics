@@ -67,6 +67,22 @@ class: middle, inverse
 .right-column[
 # Preguntas de la clase anterior?
 ]
+
+---
+class: title-slide-section-blue, middle
+
+--
+
+## Esta vez solo hubo un ganador en 5.0
+
+--
+
+### Juan Rapalino Diaz 💥💪🏼
+
+--
+
+### Felicitaciones!!
+
 ---
 class: title-slide-section-grey, middle
 
@@ -443,6 +459,184 @@ $$PMG_L=\frac{2.5}{\sqrt{5.76}}+3= \color{#fc0330}{4.04}$$
 --
 
 `r fa("box-open", fill="blue")` Lo que nos .black[confirma] que cuando la *productividad marginal* cruza la **productividad media**, lo hace en el punto máximo de esta última.
+
+---
+class: title-slide-section-blue, middle
+
+
+# Otras formas de contrato
+
+---
+layout: true
+# Insumos de contrato
+
+---
+
+--
+
+`r fa("fighter-jet", fill="blue")` Hemos trabajado con la variable (L), que puede ser concebida como *número de horas de trabajo* e incluso *número de personas* que contrata la firma o empresa. Pero debemos incluso pensar que hay variables como los .RUred[costos] asociados a ese nivel de uso.
+
+--
+
+`r fa("fighter-jet", fill="blue")` Vamos ahora a intentar encontrar el número de trabajadores y de capital necesario con **estatica comparativa**.
+
+--
+
+`r fa("fighter-jet", fill="blue")` Podemos entonces incluso tomar las **funciones de producción** de las empresas y con esto hallar el capital y trabajo .RUred[optimo], sujeto a salarios (w) y costo de capital (r).
+
+---
+
+--
+
+> Piense que tiene una función de producción como:
+
+--
+
+$$q=L^{0.5}K^{0.5}$$
+
+--
+
+Trabajemos con la función de sustitución y tendremos:
+
+--
+
+`r fa("bell", fill="red")` Condición de **tangencia**:
+
+$$\frac{\text{Pmg}_L}{\text{Pmg}_K}=\frac{w}{r}$$
+
+--
+
+Esto es:
+
+--
+
+$$\frac{0.5L^{-0.5}K^{0.5}}{0.5L^{0.5}K^{-0.5}}=\frac{w}{r}\quad \Rightarrow \frac{K}{L}=\frac{w}{r}$$
+---
+
+--
+
+Vamos a despejar uno de los factores, por ejemplo (K):
+
+--
+
+$$K=\frac{w}{r}\times L$$
+
+--
+
+`r fa("bell", fill="red")` Reemplacemos en la **función original**:
+
+--
+
+$$q=L^{0.5}{\left(\frac{wL}{r}\right)}^{0.5}$$
+
+--
+
+`r fa("bell", fill="red")` Despejemos (L)
+
+--
+
+$$L=q \div {\left(\frac{w}{r}\right)}^{0.5}\quad \Rightarrow \frac{q\sqrt{r}}{\sqrt{w}}$$
+
+---
+
+--
+
+> Por simetría podemos reemplazar para saber con el grupo de maquinas o capital
+
+--
+
+Sabemos que $L=\frac{q\sqrt{r}}{\sqrt{w}}$ y debemos reemplazar en condición de **tangencia**:
+
+--
+
+$$K=\frac{w}{r}\frac{q\sqrt{r}}{\sqrt{w}}=\color{red}{\frac{q\sqrt{w}}{\sqrt{r}}}$$
+
+--
+
+.grey[**Ejemplo**]: Vamos a evaluar una firma que cuyos parámetros son: $q=100$, $w=40$ y $r=10$. *Todo en miles de pesos*.
+
+--
+
+> Para L y K vamos a tener
+
+--
+
+$$L=\frac{100\sqrt{10}}{\sqrt{40}}= \color{purple}{\text{50 trabajadores}}$$
+
+--
+
+$$K=\frac{100\sqrt{40}}{\sqrt{10}}= \color{red}{\text{200 unidades de capital}}$$
+---
+layout: false
+class: title-slide-section-blue, middle
+
+# Adicionales
+
+---
+# Valor salario
+
+--
+
+<img src="images/b1.png" width="780"/>
+
+
+---
+# Valor salario
+
+
+
+<img src="images/b2.png" width="780"/>
+
+---
+# Valor salario
+
+
+
+<img src="images/b3.png" width="780"/>
+
+---
+# Valor salario
+
+--
+
+`r fa("bomb", fill="red")` Suponga que hay 3 individuos que manifiestan el deseo de trabajar y sus funciones son las siguientes:
+
+--
+
+$$\begin{aligned}
+    I_{1}^{s}(w)=& 0.5w-3450\\
+    I_{2}^{s}(w)=& w-6905\\
+    I_{3}^{s}(w)=& w-6910
+\end{aligned}$$
+
+--
+
+- Con un salario por hora de `$3.450`, ¿Cuantas horas están dispuestos a trabajar cada individuo?
+- Ahora con un salario de `$6.910`.
+- ¿Cuál debe ser el salario (min) por hora para que al menos el individuo tres quiera trabajar?
+
+---
+# Valor salario
+
+--
+
+1. A ese nivel de salario ninguno esta dispuesto a trabajar
+
+--
+
+2. Solo los trabajadores (1) y (2)
+
+--
+
+3. Tiene que ser mayor al nivel de salario de:
+
+--
+
+$$\begin{split}
+w>6910 \Rightarrow \\
+L^{S}(w)&=L_{1}^{S}(w)+L_{2}^{S}(w)+L_{3}^{S}(w)\\ L^{S}(w)&= (0.5w-3450)+(w-6905)+(w-6910) \\
+L^{S}(w)&=2.5w-17265
+\end{split}$$
 
 ---
 class: title-slide-section-grey
