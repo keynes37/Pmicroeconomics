@@ -125,6 +125,101 @@ class: middle, inverse
 ---
 class: title-slide-section-blue, middle
 
+--
+
+## Corrección Pública control 6
+
+--
+
+`r fa("info-circle", fill="red")` Hubo 5 estudiantes en 5.0. Y el Top 3 de la semana pasada entonces queda:
+
+--
+
+```{R, graph01, echo = F, fig.height = 5, fig.width = 9, dev = "svg"}
+# Datos
+pop_df = 
+  data.frame(
+  lang = c("Bladimir Contreras", "Dilan Alarcon", "Juan Rapalino"),
+  n_jobs = c(100, 95, 95),
+  free = c(T, F, F)
+  )
+## Graficando
+pop_df %>% 
+  mutate(lang = lang %>% factor(ordered = T)) %>%
+  ggplot(aes(x = lang, y = n_jobs, fill = free)) +
+  geom_col() +
+  geom_hline(yintercept = 0) +
+  aes(x = reorder(lang, -n_jobs), fill = reorder(free, -free)) +
+  xlab("Estudiantes") +
+  scale_y_continuous(label = scales::comma) +
+  ylab("Podium") +
+  labs(
+    title = "Participación Control 06",
+    subtitle = "Nota de Control 06"
+    ) +
+  scale_fill_manual(
+    "Mejor tiempo?",
+    labels = c("Si", "No"),
+    values = c("#f92672", "darkslategray")
+    ) +
+  ggthemes::theme_pander(base_size = 17) +
+  # theme_ipsum() +
+  theme(legend.position = "bottom")
+```
+
+--
+
+### Felicitaciones!!
+
+---
+# Ahora, donde están?
+
+--
+
+.pull-left[
+```{R, graph02, echo = F, fig.height = 5, fig.width = 9, dev = "svg"}
+# Datos
+pop_df = 
+  data.frame(
+  lang = c("Miguel Romo", "Valeria Barrera", "Gonzalo Macias"),
+  n_jobs = c(100, 95, 88),
+  free = c(T, F, F)
+  )
+## Graficando
+pop_df %>% 
+  mutate(lang = lang %>% factor(ordered = T)) %>%
+  ggplot(aes(x = lang, y = n_jobs, fill = free)) +
+  geom_col() +
+  geom_hline(yintercept = 0) +
+  aes(x = reorder(lang, -n_jobs), fill = reorder(free, -free)) +
+  xlab("Estudiantes") +
+  scale_y_continuous(label = scales::comma) +
+  ylab("Podium") +
+  labs(
+    title = "Control 07",
+    subtitle = "Nota de control actual"
+    ) +
+  scale_fill_manual(
+    "Mejor tiempo?",
+    labels = c("Si", "No"),
+    values = c("#f92672", "turquoise")
+    ) +
+  ggthemes::theme_pander(base_size = 17) +
+  # theme_ipsum() +
+  theme(legend.position = "bottom")
+```
+]
+
+--
+
+.pull-right[
+![](https://media.giphy.com/media/1236TCtX5dsGEo/giphy.gif)
+]
+
+
+---
+class: title-slide-section-blue, middle
+
 # Recordeis
 
 <br>
