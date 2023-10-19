@@ -78,9 +78,9 @@ class: middle, inverse
 # Datos
 pop_df = 
   data.frame(
-  lang = c("Ana Garcia", "Ariadna Perez", "Luis Rodriguez", "Maria Almanza", "Maurizio Dicembre"),
-  n_jobs = c(100, 98, 97, 96,95),
-  free = c(T, F, F, F, F)
+  lang = c("Martin Muñoz", "Jesus Mendez", "Ricardo Aaron"),
+  n_jobs = c(100, 98, 97),
+  free = c(T, F, F)
   )
 ## Graficando
 pop_df %>% 
