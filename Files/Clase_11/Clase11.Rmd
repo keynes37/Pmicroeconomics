@@ -168,9 +168,9 @@ class: title-slide-section-grey, middle
 # Datos
 pop_df = 
   data.frame(
-  lang = c("Ana Trillo", "Juan Gonzalez", "Lina Gutierrez", "Rodrigo Aparicio"),
-  n_jobs = c(100, 78, 70, 65),
-  free = c(T, F, F, F)
+  lang = c("Shadia Casij", "Juan Pinto", "Paula Losada"),
+  n_jobs = c(100, 78, 70),
+  free = c(T, F, F)
   )
 ## Graficando
 pop_df %>% 
