@@ -93,7 +93,9 @@ class: right, middle
 `r fa('google')` [Google Scholar](https://scholar.google.com/citations?user=NlFSQDwAAAAJ&hl=es)
 
 
-`r fa('graduation-cap')` Profesor Asistente (Econometría, Microeconomía y algo de Ciencia de Datos) en el Departamento de Economía **Bloque D**.
+`r fa('graduation-cap')` Profesor Asistente en el Departamento de Economía Universidad del Norte **Bloque D**.
+
+(Econometría, Microeconomía y algo de Ciencia de Datos) 
 
 ---
 # Lo importante de la sesión:

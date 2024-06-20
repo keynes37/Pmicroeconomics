@@ -2,7 +2,7 @@
 title: "Principios de Microeconomía"
 subtitle: "Demanda y oferta"
 author: "Carlos Yanes Guerra"
-date: "Universidad del Norte </br> 4 de Agosto 2023"
+date: "Universidad del Norte </br> 20 de Junio 2024"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -62,7 +62,7 @@ class: middle, inverse
 ]
 
 .right-column[
-# Preguntas de la sesion anterior?
+# Como va con el curso? Si le ha gustado?
 ]
 ---
 class: title-slide-section-grey, middle
@@ -112,7 +112,7 @@ class: title-slide-section-grey, middle
 
 --
 
-- Esto resulta subjetivo, sin embargo, es el .black[sacrificio] sobre todo de su tiempo.
+- Esto resulta subjetivo, sin embargo, es el .black[sacrificio] sobre todo de su tiempo/recursos.
 
 --
 
