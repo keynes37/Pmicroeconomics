@@ -64,10 +64,10 @@ class: middle, inverse
 ]
 
 .right-column[
-# Preguntas de la clase anterior?
+# Preguntas de las sesiones anteriores?
 ]
 ---
-# Donde estan?
+# Rendimiento participativo
 
 --
 
@@ -76,8 +76,8 @@ class: middle, inverse
 # Datos
 pop_df = 
   data.frame(
-  lang = c("Alba Mercado", "Miguel Romo", "José Alvarez"),
-  n_jobs = c(100, 96, 92),
+  lang = c("Natalia de la Hoz", "Catalina Anaya", "Diana Guette"),
+  n_jobs = c(100, 97, 90),
   free = c(T, F, F)
   )
 ## Graficando
@@ -91,12 +91,12 @@ pop_df %>%
   scale_y_continuous(label = scales::comma) +
   ylab("Podium") +
   labs(
-    title = "Participación Quiz",
-    subtitle = "Nota de Quiz 1"
+    title = "Participación Global",
+    subtitle = "Notas de Oralidad"
     ) +
   scale_fill_manual(
-    "Mejor tiempo?",
-    labels = c("Si", "No"),
+    "",
+    labels = c("Primer", "Th"),
     values = c("#f92672", "darkslategray")
     ) +
   ggthemes::theme_pander(base_size = 17) +
