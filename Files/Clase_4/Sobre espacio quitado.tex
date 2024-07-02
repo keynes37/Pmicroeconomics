@@ -1,0 +1,40 @@
+--
+
+# Donde estan?
+
+--
+
+.pull-left[
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+# Supongamos que tienes un dataframe llamado 'datos'
+datos <- data.frame(
+  personas = c("Ginella Cervantes", "Stefania Santodomingo", "Jesús Mendez"),
+  tiempo = c(1.18, 1.47, 2.38),
+  programa = c("Negocios Internacionales", "Ingeniería Ind.", "Contaduría")
+)
+
+# Ordenar el dataframe por la columna 'tiempo'
+#datos_ordenados <- datos[order(-datos$tiempo), ]
+
+# Crear el gráfico de barras horizontales con información adicional
+grafico <- plot_ly(
+  data = datos,
+  x = ~tiempo,
+  y = ~personas,
+  text = ~programa,  # Información adicional para mostrar al pasar el cursor
+  type = "bar",
+  orientation = 'h'
+) |>
+  layout(xaxis= list(categoryorder = "total ascending"))
+
+# Mostrar el gráfico interactivo
+grafico
+
+```
+
+]
+
+--
+
+.pull-right[![](https://media.giphy.com/media/YRuFixSNWFVcXaxpmX/giphy.gif)]
+

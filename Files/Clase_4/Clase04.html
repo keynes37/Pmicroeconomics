@@ -7,14 +7,6 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/middlebury.css" rel="stylesheet" />
     <link href="libs/remark-css/middlebury-fonts.css" rel="stylesheet" />
-    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
-    <script src="libs/plotly-binding/plotly.js"></script>
-    <script src="libs/typedarray/typedarray.min.js"></script>
-    <script src="libs/jquery/jquery.min.js"></script>
-    <link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
-    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
-    <link href="libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
-    <script src="libs/plotly-main/plotly-latest.min.js"></script>
     <script src="libs/kePrint/kePrint.js"></script>
     <link href="libs/lightable/lightable.css" rel="stylesheet" />
   </head>
@@ -32,7 +24,7 @@ class: left, middle
 &lt;br&gt;
 &lt;img src="images/lognig.png" width="280" /&gt;
 
-### Carlos Yanes | Departamento de Economía | 2023-08-16
+### Carlos Yanes | Departamento de Economía | 2024-07-02
 
 
 
@@ -48,25 +40,6 @@ class: middle, inverse
 .right-column[
 # Preguntas de la clase anterior?
 ]
-
----
-class: title-slide-section-blue
-
---
-
-# Donde estan?
-
---
-
-.pull-left[
-<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-92acdfde02064d4663aa" style="width:504px;height:504px;"></div>
-<script type="application/json" data-for="htmlwidget-92acdfde02064d4663aa">{"x":{"visdat":{"ce1eaea6573":["function () ","plotlyVisDat"]},"cur_data":"ce1eaea6573","attrs":{"ce1eaea6573":{"x":{},"y":{},"text":{},"orientation":"h","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"categoryorder":"total ascending","title":"tiempo"},"yaxis":{"domain":[0,1],"automargin":true,"title":"personas","type":"category","categoryorder":"array","categoryarray":["Ginella Cervantes","Jesús Mendez","Stefania Santodomingo"]},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1.18,1.47,2.38],"y":["Ginella Cervantes","Stefania Santodomingo","Jesús Mendez"],"text":["Negocios Internacionales","Ingeniería Ind.","Contaduría"],"orientation":"h","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-
-]
-
---
-
-.pull-right[![](https://media.giphy.com/media/YRuFixSNWFVcXaxpmX/giphy.gif)]
 
 ---
 class: title-slide-section-blue, middle
@@ -765,6 +738,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
