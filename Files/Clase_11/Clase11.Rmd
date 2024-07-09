@@ -159,7 +159,7 @@ class: title-slide-section-grey, middle
 <img src="images/lognig.png" width="380" />
 
 ---
-# Donde estan?
+# Participación top clases
 
 --
 
@@ -168,9 +168,9 @@ class: title-slide-section-grey, middle
 # Datos
 pop_df = 
   data.frame(
-  lang = c("Shadia Casij", "Juan Pinto", "Paula Losada"),
-  n_jobs = c(100, 78, 70),
-  free = c(T, F, F)
+  lang = c("Diana Guete", "Natalia De la Hoz", "Valentina Blanco"),
+  n_jobs = c(100, 85, 70),
+  free = c(T, T, F)
   )
 ## Graficando
 pop_df %>% 
@@ -183,11 +183,11 @@ pop_df %>%
   scale_y_continuous(label = scales::comma) +
   ylab("Podium") +
   labs(
-    title = "Participación Control",
-    subtitle = "Nota de Control 09"
+    title = "Participación y aporte",
+    subtitle = ""
     ) +
   scale_fill_manual(
-    "Mejor tiempo?",
+    "Top anterior?",
     labels = c("Si", "No"),
     values = c("#f92672", "darkslategray")
     ) +
