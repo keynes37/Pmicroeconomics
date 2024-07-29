@@ -1,6 +1,6 @@
 # Pmicroeconomics
 
-Este repo contiene las clases de **Principios de Microeconomía** de la Universidad del Norte. Todos los elementos son académicos y son para ser tratados en clase mas allá. Vinter(3.8) Final week 0.1
+Este repo contiene las clases de **Principios de Microeconomía** de la Universidad del Norte. Todos los elementos son académicos y son para ser tratados en clase mas allá. Vinter(3.8) Final week 0.2
 
 ## Clases
 
