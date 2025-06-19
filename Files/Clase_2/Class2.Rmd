@@ -2,7 +2,7 @@
 title: "Principios de Microeconomía"
 subtitle: "Demanda y oferta"
 author: "Carlos Yanes Guerra"
-date: "Universidad del Norte </br> 20 de Junio 2024"
+date: "Universidad del Norte"
 output:
   xaringan::moon_reader:
     lib_dir: libs
