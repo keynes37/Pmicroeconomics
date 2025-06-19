@@ -2,7 +2,7 @@
 
 Este repo contiene las clases de **Principios de Microeconomía** de la Universidad del Norte. Todos los elementos son académicos y son para ser tratados en clase mas allá. Vinter(3.8) Final week 0.2
 
-## Clases
+## Clases (enveloped)
 
 Clase 01 [Introducción](https://keynes37.github.io/Pmicroeconomics/Files/Clase_1/Class1.html#1)
 
