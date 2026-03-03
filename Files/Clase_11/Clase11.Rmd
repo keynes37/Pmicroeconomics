@@ -24,7 +24,7 @@ class: left, middle
 ## Estructuras de Mercado (Monopolio)
 <br>
 <br>
-<img src="images/lognig.png" width="280" />
+<img src="images/log60.png" width="280" />
 
 ### Carlos Yanes | Departamento de Economía | `r Sys.Date()`
 
@@ -157,52 +157,6 @@ class: title-slide-section-grey, middle
 
 <br>
 <img src="images/lognig.png" width="380" />
-
----
-# Participación top clases
-
---
-
-.pull-left[
-```{R, graphoui, echo = F, fig.height = 5, fig.width = 9, dev = "svg"}
-# Datos
-pop_df = 
-  data.frame(
-  lang = c("Diana Guete", "Natalia De la Hoz", "Valentina Blanco"),
-  n_jobs = c(100, 85, 70),
-  free = c(T, T, F)
-  )
-## Graficando
-pop_df %>% 
-  mutate(lang = lang %>% factor(ordered = T)) %>%
-  ggplot(aes(x = lang, y = n_jobs, fill = free)) +
-  geom_col() +
-  geom_hline(yintercept = 0) +
-  aes(x = reorder(lang, -n_jobs), fill = reorder(free, -free)) +
-  xlab("Estudiantes") +
-  scale_y_continuous(label = scales::comma) +
-  ylab("Podium") +
-  labs(
-    title = "Participación y aporte",
-    subtitle = ""
-    ) +
-  scale_fill_manual(
-    "Top anterior?",
-    labels = c("Si", "No"),
-    values = c("#f92672", "darkslategray")
-    ) +
-  ggthemes::theme_pander(base_size = 17) +
-  # theme_ipsum() +
-  theme(legend.position = "bottom")
-```
-]
-
---
-
-.pull-right[
-![](https://media.giphy.com/media/AwoDg0wJImOjK/giphy.gif)
-]
-
 
 ---
 class: inverse, middle
@@ -1616,6 +1570,136 @@ ft <- color(ft, part = "footer", color = "#666666")
 ft <- set_caption(ft, caption = "Tabla de precios")
 ft
 ```
+
+---
+class: inverse, middle
+
+# Qué es eso del Monopsonio? `r emo::ji("rocket")`
+
+--
+
+## Otra fuente de poder? 
+
+
+---
+# Monopsonio
+
+--
+
+> Cuando solo hay uno o unos pocos compradores, algunos pueden tener poder de monopsonio: tienen capacidad para **influir en el precio** del bien. El poder de monopsonio permite al comprador adquirir el bien a un precio inferior al que estaría vigente en un mercado competitivo.
+
+--
+
+Razón:
+
+--
+
+$$P_{monopsonio}<P_{competencia}$$
+--
+
+### Palabras claves!!
+
+--
+
+.RUred[Valor Marginal] Beneficio adicional generado por la compra de una unidad más de un *bien*.
+
+--
+
+.RUred[curva de valor marginal] de una persona es su curva de demanda del bien. la curva de oferta es la **curva de gasto medio**.
+
+---
+# Monopsonio
+
+--
+
+El coste adicional de comprar una unidad más de un bien se denomina .RUred[gasto marginal].
+
+El .RUred[gasto medio] viene a ser el Precio pagado por unidad de un bien.
+
+--
+
+$$P \times q = \text{Gasto Medio}$$
+---
+# Monopsonio
+
+--
+
+### Elasticidad de la oferta del mercado 
+
+Un .RUred[monopsonista] se beneficia porque se enfrenta a una **curva de oferta** de pendiente positiva, por lo que el gasto marginal es superior al gasto medio. Cuanto menos elástica es la curva de oferta, mayor es la diferencia entre el gasto marginal y el gasto medio y más poder de monopsonio tiene el comprador.
+
+--
+
+###Número de compradores
+
+En la mayoría de los mercados, hay más de un comprador y el número de **compradores** es un importante determinante del poder de monopsonio. Cuando el número de compradores es muy grande, ninguno de ellos puede influir significativamente en el precio.
+
+--
+
+### Relación entre los compradores
+
+Finalmente, supongamos que hay tres o cuatro compradores en el mercado. Si estos compiten ferozmente, presionan al alza sobre el precio hasta que este es cercano al **valor marginal** de su producto y, por tanto, tienen poco poder de monopsonio. En cambio, si compiten menos o llegan incluso a coludir, los precios no suben mucho y su grado de poder de monopsonio puede ser tan grande como si solo hubiera un comprador.
+
+---
+# Monopsonio
+
+--
+
+<center>
+<img src="images/BLPan.png" width="480" />
+</center>
+
+---
+# Monopsonio
+
+--
+
+`r emo::ji("warning")` Suponga que tiene lo siguienute:
+
+--
+
+$$P=1200-2Q$$
+--
+
+$$CT(q)=400+Q^{2}$$
+--
+
+Pasamos hallar los puntos claves:
+
+--
+
+Costo Marginal es $2Q$, la oferta entonces es $P=2Q$;
+
+--
+
+Vamos a ver que Gasto $P(q)\times Q \Rightarrow 2Q \times Q= 2Q^{2}$
+
+--
+
+Sacamos el marginal y esto es $4Q$
+
+---
+# Monopsonio
+
+--
+
+<center>
+<img src="images/brmonograph.png" width="480" />
+</center>
+
+--
+
+Tenemos La **solución competitiva** sería 400-800, pero en el monopsonio, el consumidor puede pagar un precio menor, (480) y comprar 240 uds de ello.
+
+---
+# Monopsonio
+
+--
+
+
+
+
+
 ---
 class: title-slide-section-grey
 
